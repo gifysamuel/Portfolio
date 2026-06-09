@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+
+        background:
+            linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url("PP.avif");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        min-height: 100vh;
+        overflow-x: hidden;
+
+        animation: pageLoad 0.8s ease;
+    }
+
+    /* ===== NAVBAR ===== */
+
+    .header {
+        background: rgba(17, 16, 16, 0.5);
+        backdrop-filter: blur(10px);
+
+        position: fixed;
+        top: 20px;
+        left: 15px;
+        right: 15px;
+
+        padding: 18px 25px;
+        border-radius: 100px;
+
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        z-index: 1000;
+
+        animation: navDrop 0.8s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0,255,255,0.15);
+    }
+
+
+    .main_img
+    {
+        width:300px;
+        height:300px;
+
+        border-radius:50%;
+
+        overflow:hidden;
+
+        border:4px solid cyan;
+
+        box-shadow:0 0 30px rgba(0,255,255,0.5);
+
+        animation:float 4s ease-in-out infinite;
+    }
+
+    .main_img img
+    {
+        width:100%;
+        height:100%;
+
+        object-fit:cover;
+
+        transition:0.5s;
+    }
+
+    .main_img img:hover
+    {
+        transform:scale(1.08);
+    }
+
+
+
+    
+    .logo {
+        margin-right: auto;
+    }
+
+    .Gify {
+        border-radius: 50%;
+        transition: transform 0.4s ease;
+    }
+
+    .Gify:hover {
+        transform: rotate(10deg) scale(1.05);
+    }
+
+    /* ===== NAV LINKS ===== */
+
+    .header a {
+        color: white;
+        text-decoration: none;
+        position: relative;
+        padding: 5px 0;
+
+        transition: color 0.3s ease;
+    }
+
+    .header a:hover {
+        color: cyan;
+
+    }
+
+    /* sliding underline */
+    .header a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: 2px;
+
+        background: cyan;
+
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+
+    .header a:hover::after {
+        transform: scaleX(1);
+    }
+
+#loader
+{
+    position: fixed;
+    inset: 0;
+
+    background: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    transition: 1s;
+}
+
+.loader-content
+{
+    text-align: center;
+}
+
+.typing-text
+{
+    color: cyan;
+
+    font-size: 3rem;
+    font-weight: 700;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    border-right: 4px solid cyan;
+
+    width: 0;
+
+
+
+    animation:
+    typing 2.5s steps(14,end) forwards,
+    blink 0.7s infinite;
+}
+
+.loader-content p
+{
+    color: white;
+
+    margin-top: 20px;
+
+    letter-spacing: 3px;
+
+    opacity: 0;
+
+    animation: fadeText 1s forwards;
+    animation-delay: 0.5s;
+}
+
+
+.loader-hidden
+{
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+    /* ===== MAIN CONTENT ===== */
+
+    .intro {
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+
+        flex-wrap: wrap;
+
+        padding-top: 100px;
+        box-sizing: border-box;
+    }
+
+    .main_img {
+        width: 300px;
+        height: 300px;
+
+        border-radius: 50%;
+        overflow: hidden;
+
+        border: 4px solid cyan;
+        box-shadow: 0 0 30px rgba(0,255,255,0.5);
+
+        animation: float 4s ease-in-out infinite;
+        transition: transform 0.4s ease;
+    }
+
+    .main_img:hover {
+        transform: scale(1.05);
+    }
+
+    .main_img_pic {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .intro_text {
+        color: white;
+        animation: fadeIn 1s ease;
+    }
+
+    .intro_text h1 {
+        font-size: clamp(2rem, 5vw, 4rem);
+    }
+
+    .intro_text p {
+        opacity: 0.8;
+    }
+
+
+
+.footer
+{
+    margin-top: 100px;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: rgba(17,16,16,0.5);
+
+    backdrop-filter: blur(10px);
+
+    border-top: 1px solid rgba(0,255,255,0.2);
+}
+
+.footer h2
+{
+    color: cyan;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+    0 0 10px cyan,
+    0 0 20px cyan;
+}
+
+.footer p
+{
+    color: white;
+
+    opacity: 0.8;
+}
+
+
+
+
+.socials
+{
+    margin: 25px 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.socials a
+{
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    text-decoration: none;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(0,255,255,0.3);
+
+    transition: 0.4s;
+}
+
+.socials a:hover
+{
+    color: cyan;
+
+    transform: translateY(-8px) scale(1.1);
+
+    box-shadow:
+    0 0 15px cyan,
+    0 0 30px cyan;
+}
+
+.socials i
+{
+    font-size: 22px;
+}
+
+.copyright
+{
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    opacity: 0.6;
+}
+
+
+
+
+    /* ===== ANIMATIONS ===== */
+
+
+    @keyframes typing
+{
+    from { width: 0; }
+
+    to { width: 14ch; }
+}
+
+@keyframes blink
+{
+    50%
+    {
+        border-color: transparent;
+    }
+}
+
+@keyframes loadBar
+{
+    from
+    {
+        width: 0%;
+    }
+
+    to
+    {
+        width: 100%;
+    }
+}
+
+@keyframes fadeText
+{
+    from
+    {
+        opacity: 0;
+    }
+
+    to
+    {
+        opacity: 1;
+    }
+}
+
+
+
+    @keyframes navDrop {
+        from {
+            opacity: 0;
+            transform: translateY(-40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes pageLoad {
+        from {
+            opacity: 0;
+            transform: scale(0.98);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+<script>
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        document
+        .getElementById("loader")
+        .classList
+        .add("loader-hidden");
+
+    }, 1900);
+
+});
+
+</script>
+
+
+<div id="loader">
+
+    <div class="loader-content">
+
+        <h1 class="typing-text">
+            Gify Samuel A
+        </h1>
+
+
+        <p>Loading Portfolio...</p>
+
+    </div>
+
+</div>
+
+<div class="header">
+
+    <div class="logo">
+        <img class="Gify" src="Gify.png" width="50">
+    </div>
+
+    <a href="index.html">HOME</a>
+    <a href="About.html">ABOUT ME</a>
+        <a href="Projects.html">PROJECTS</a>
+    <a href="Contact.html">CONTACTS</a>
+
+
+</div>
+
+<div class="intro">
+
+    <div class="main_img">
+        <img class="main_img_pic" src="Gify_main.jpg">
+    </div>
+
+    <div class="intro_text">
+        <h1>Hi, I'm Gify Samuel A</h1>
+        <p>Student • Web Developer • Tech Enthusiast</p>
+    </div>
+
+
+
+
+</div>
+
+
+
+<footer class="footer">
+
+
+    <div class="socials">
+
+        <a href="https://github.com/gifysamuel" target="_blank"><i class="fab fa-github"></i></a>
+
+        <a href="https://www.linkedin.com/in/gifysamuel" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="#"><i class="fab fa-instagram"></i></a>
+
+        <a href="mailto:gifysamuelamarth@gmail.com">
+            <i class="fas fa-envelope"></i>
+        </a>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 Gify Samuel A. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+</body>
+</html>
