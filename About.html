@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Me</title>
+        <link rel="preload" as="image" href="Edit.jpg">
+<link rel="preload" as="image" href="media2.jpg">
+
+<link rel="preload" as="image" href="Song.jpg">
+<link rel="preload" as="image" href="music1.jpg">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+
+        background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("PP.avif");
+
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+
+        min-height: 100vh;
+
+        animation: pageLoad 0.8s ease;
+    }
+
+
+    .header {
+        background: rgba(17,16,16,0.5);
+        backdrop-filter: blur(10px);
+
+        position: fixed;
+        top: 20px;
+        left: 15px;
+        right: 15px;
+
+        padding: 20px;
+        border-radius: 100px;
+
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        z-index: 1000;
+
+        animation: navDrop 0.8s ease;
+        transition: 0.3s ease;
+    }
+
+    .header:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0,255,255,0.15);
+    }
+
+    .logo {
+        margin-right: auto;
+    }
+
+    .Gify {
+        border-radius: 50%;
+        transition: transform 0.4s ease;
+    }
+
+    .Gify:hover {
+        transform: rotate(8deg) scale(1.05);
+    }
+
+
+            .header a.active{
+            color:cyan;
+        }
+
+        .header a.active::after{
+            transform:scaleX(1);
+        }
+
+    /* ===== LINKS ===== */
+
+    .header a {
+        color: white;
+        text-decoration: none;
+        position: relative;
+        padding: 5px 0;
+
+        transition: color 0.3s ease;
+    }
+
+    .header a:hover {
+        color: cyan;
+    }
+
+    /* underline animation */
+    .header a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: 2px;
+
+        background: cyan;
+
+        transform: scaleX(0);
+        transform-origin: left;
+
+        transition: transform 0.3s ease;
+    }
+
+    .header a:hover::after {
+        transform: scaleX(1);
+    }
+
+    
+
+    /* ===== LAYOUT ===== */
+
+    .about_container {
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+        
+
+        padding: 150px 50px 50px;
+        flex-wrap: wrap;
+    }
+
+
+    .main_img 
+    {
+        width: 300px;
+        height: 300px;
+
+        border-radius: 50%;
+        overflow: hidden;
+
+        border: 4px solid cyan;
+        box-shadow: 0 0 30px rgba(0,255,255,0.5);
+
+        animation: float 4s ease-in-out infinite, fadeIn 1s ease;
+        transition: transform 0.4s ease;
+    }
+
+    .main_img:hover {
+        transform: scale(1.05);
+    }
+
+    .main_img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* ===== TEXT ===== */
+
+    .about_text,.extra_AbtMusic,.extra_AbtMedia
+     {
+        color: white;
+        max-width: 650px;
+
+        animation: fadeUp 1s ease;
+    }
+
+    .about_text h1
+     {
+        font-size: clamp(2.5rem,5vw,4rem);
+        color: cyan;
+        margin-bottom: 20px;
+    }
+
+    .about_text p 
+    {
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+
+        opacity: 0;
+        animation: fadeUp 1s ease forwards;
+    }
+
+    .about_text p:nth-child(2) { animation-delay: 0.2s; }
+    .about_text p:nth-child(3) { animation-delay: 0.4s; }
+
+
+    .skills 
+    {
+        display: flex;
+        
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .skill {
+        background: rgba(255,255,255,0.1);
+        padding: 10px 20px;
+        border-radius: 30px;
+        border: 1px solid rgba(0,255,255,0.4);
+
+        transition: 0.3s ease;
+        animation: popIn 0.6s ease forwards;
+    }
+
+    .skill:hover {
+        transform: translateY(-5px) scale(1.05);
+        background: rgba(0,255,255,0.1);
+    }
+
+
+
+    .footer
+{
+    margin-top: 100px;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: rgba(17,16,16,0.5);
+
+    backdrop-filter: blur(10px);
+
+    border-top: 1px solid rgba(0,255,255,0.2);
+}
+
+.footer h2
+{
+    color: cyan;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+    0 0 10px cyan,
+    0 0 20px cyan;
+}
+
+.footer p
+{
+    color: white;
+
+    opacity: 0.8;
+}
+
+.socials
+{
+    margin: 25px 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.socials a
+{
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    text-decoration: none;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(0,255,255,0.3);
+
+    transition: 0.4s;
+}
+
+.socials a:hover
+{
+    color: cyan;
+
+    transform: translateY(-8px) scale(1.1);
+
+    box-shadow:
+    0 0 15px cyan,
+    0 0 30px cyan;
+}
+
+.socials i
+{
+    font-size: 22px;
+}
+
+.copyright
+{
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    opacity: 0.6;
+}
+
+
+.music-section{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:80px;
+
+    width:90%;
+    margin:120px auto;
+
+    flex-wrap:wrap;
+
+}
+
+.music-image{
+
+    width:350px;
+    height:350px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    animation:floatImage 5s ease-in-out infinite;
+
+}
+
+
+
+.music-slide{
+
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:30px;
+
+    border:3px solid cyan;
+
+    box-shadow:0 0 25px rgba(0,255,255,.4);
+
+    opacity:0;
+
+    transform:scale(1);
+
+    transition:
+        opacity 1.2s ease,
+        transform 5s linear;
+}
+
+.music-slide.active{
+
+    opacity:1;
+    transform:scale(1.08);
+
+}
+
+.music-text{
+
+    max-width:600px;
+    color:white;
+
+}
+
+.music-text h2{
+
+    font-size:3rem;
+
+    color:cyan;
+
+    margin-bottom:20px;
+
+}
+
+.music-text p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#dcdcdc;
+
+}
+
+@keyframes floatImage{
+
+    0%{
+
+        transform:translateY(0px) rotate(-2deg);
+
+    }
+
+    25%{
+
+        transform:translateY(-15px) rotate(1deg);
+
+    }
+
+    50%{
+
+        transform:translateY(-25px) rotate(2deg);
+
+    }
+
+    75%{
+
+        transform:translateY(-15px) rotate(-1deg);
+
+    }
+
+    100%{
+
+        transform:translateY(0px) rotate(-2deg);
+
+    }
+
+}
+
+
+.music-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-25px;
+    
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(0,255,255,.35),
+    transparent 70%);
+
+    z-index:-1;
+
+    animation:pulseGlow 4s ease-in-out infinite;
+
+}
+
+
+    @keyframes navDrop {
+        from { opacity: 0; transform: translateY(-40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pageLoad {
+        from { opacity: 0; transform: scale(0.98); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+        from { opacity: 0; transform: scale(0.8); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+.music-image:hover .music-slide{
+    transform:scale(1.12);
+}
+
+.editing_image:hover .slide{
+    transform:scale(1.15);
+}
+
+/* ===========================
+   EDITING SECTION
+=========================== */
+
+.editing_section{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:100px;
+
+    width:90%;
+    max-width:1200px;
+
+    margin:120px auto;
+
+    flex-wrap:wrap;
+
+}
+
+/* FRAME */
+
+.editor_frame{
+
+    position:relative;
+
+    width:380px;
+    height:380px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+/* IMAGE */
+
+.editing_image{
+
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:4px solid cyan;
+
+    animation:float 5s ease-in-out infinite;
+
+    box-shadow:
+    0 0 25px cyan,
+    0 0 60px rgba(0,255,255,.3);
+
+}
+
+.editing_image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.editing_image:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+
+
+.editing_image img{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0;
+
+    transition:opacity 1.2s ease,
+               transform 4s linear;
+
+    transform:scale(1);
+}
+
+.editing_image img.active{
+
+    opacity:1;
+
+    transform:scale(1.12);
+}
+
+/* CAMERA CORNERS */
+
+.corner{
+
+    position:absolute;
+
+    width:45px;
+    height:45px;
+
+    border:3px solid cyan;
+
+}
+
+.tl{
+    top:20px;
+    left:20px;
+    border-right:none;
+    border-bottom:none;
+}
+
+.tr{
+    top:20px;
+    right:20px;
+    border-left:none;
+    border-bottom:none;
+}
+
+.bl{
+    bottom:20px;
+    left:20px;
+    border-right:none;
+    border-top:none;
+}
+
+.br{
+    bottom:20px;
+    right:20px;
+    border-left:none;
+    border-top:none;
+}
+
+/* REC */
+
+.recording{
+
+    position:absolute;
+
+    top:35px;
+    right:45px;
+
+    color:white;
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+}
+
+.dot{
+
+    width:10px;
+    height:10px;
+
+    display:inline-block;
+
+    background:red;
+
+    border-radius:50%;
+
+    margin-right:8px;
+
+    animation:blink 1s infinite;
+
+}
+
+/* CAMERA INFO */
+
+.camera-info{
+
+    position:absolute;
+
+    bottom:35px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:cyan;
+
+    letter-spacing:2px;
+
+    font-size:13px;
+
+}
+
+/* TEXT */
+
+.editing_text{
+
+    max-width:500px;
+
+    color:white;
+
+}
+
+.editing_text h2{
+
+    font-size:3rem;
+
+    color:cyan;
+
+    margin-bottom:20px;
+
+    text-shadow:0 0 15px cyan;
+
+}
+
+.editing_text p{
+
+    line-height:1.9;
+
+    opacity:.9;
+
+    font-size:18px;
+
+}
+
+/* ANIMATION */
+
+@keyframes blink{
+
+    50%{
+
+        opacity:.2;
+
+    }
+
+}
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+
+.slide{
+    opacity:0;
+    transition:opacity 1s ease;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+
+    <div class="logo">
+        <img class="Gify" src="Gify.png" width="50">
+    </div>
+
+    <a href="index.html">HOME</a>
+    <a href="About.html" class="active">ABOUT ME</a>
+        <a href="Projects.html">MY LAB</a>
+    <a href="Contact.html">CONTACTS</a>
+
+</div>
+
+<div class="about_container">
+
+    <div class="main_img">
+        <img src="About_mainpic.jpg">
+    </div>
+
+    <div class="about_text">
+
+        <h1>About Me</h1>
+
+        <p>
+            Hi, I'm <b>Gify Samuel A</b>, a student and aspiring web developer.
+            I enjoy creating modern websites, learning programming,
+            exploring AI tools, and building creative technology projects.
+        </p>
+
+        <p>
+            My goal is to become a skilled software engineer and
+            develop innovative solutions that make a positive impact.
+            I'm constantly learning new technologies and improving
+            my development skills.
+        </p>
+
+
+
+        <div class="skills">
+
+             <div class="skill">HTML</div>
+
+             <div class="skill">CSS</div>
+
+             <div class="skill">FlexBox</div>
+
+             <div class="skill">Java</div>
+
+             <div class="skill">Java Script</div>
+
+             <div class="skill">Python</div>
+
+             <div class="skill">Web Design</div>
+
+             <div class="skill">AI Tools</div>
+
+             <div class="skill">Tinkercad</div>
+
+            <div class="skill">Tech Enthusiast</div>
+
+        </div>
+
+        </div>
+
+
+
+<section class="music-section">
+
+        <div class="music-image">
+
+            <img src="Song.jpg" class="music-slide active" alt="Music">
+            <img src="music1.jpg" class="music-slide" alt="Music">
+
+
+
+    </div>
+
+    <div class="music-text">
+
+        <h2>Music</h2>
+
+        <p>
+            Beyond technology, I enjoy playing the piano, guitar, and drums.
+            Music helps me improve creativity, patience, and discipline, which
+            also influences the way I build software and solve problems.
+        </p>
+
+    </div>
+
+</section>
+
+      
+<div class="editing_section">
+
+    <div class="editor_frame">
+
+        <span class="corner tl"></span>
+        <span class="corner tr"></span>
+        <span class="corner bl"></span>
+        <span class="corner br"></span>
+
+        <div class="recording">
+            <span class="dot"></span> REC
+        </div>
+
+    <div class="editing_image">
+
+        <div class="flash"></div>
+
+        <img src="Edit.jpg" class="slide active" alt="Editing">
+        <img src="media2.jpg" class="slide" alt="Editing">
+
+    </div>
+
+        <div class="camera-info">
+            4K • 60FPS
+        </div>
+
+    </div>
+
+    <div class="editing_text">
+
+        <h2>Creative Editing</h2>
+
+        <p>
+            I enjoy producing cinematic videos, editing visuals,
+            designing graphics, and creating engaging digital
+            experiences that combine creativity with technology.
+        </p>
+
+    </div>
+
+</div>
+
+    </div>
+</div>
+
+<footer class="footer">
+
+
+    <div class="socials">
+
+        <a href="https://github.com/gifysamuel" target="_blank"><i class="fab fa-github"></i></a>
+
+        <a href="https://www.linkedin.com/in/gifysamuel" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="#"><i class="fab fa-instagram"></i></a>
+
+        <a href="mailto:gifysamuelamarth@gmail.com">
+            <i class="fas fa-envelope"></i>
+        </a>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 Gify Samuel A. All Rights Reserved.
+    </p>
+
+</footer>
+
+<script>
+const slides = document.querySelectorAll(".editing_image .slide");
+
+Promise.all(
+    [...slides].map(img => {
+        return new Promise(resolve => {
+            if (img.complete) {
+                resolve();
+            } else {
+                img.onload = resolve;
+            }
+        });
+    })
+).then(() => {
+
+    let current = 0;
+
+    setInterval(() => {
+
+        slides[current].classList.remove("active");
+
+        current = (current + 1) % slides.length;
+
+        slides[current].classList.add("active");
+
+    }, 5000);
+
+});
+
+
+const musicSlides = document.querySelectorAll(".music-slide");
+
+const musicImages = [
+    "Song.jpg",
+    "music1.jpg"
+
+];
+
+// Preload all music images
+Promise.all(
+    musicImages.map(src => {
+        return new Promise(resolve => {
+            const img = new Image();
+            img.src = src;
+            img.onload = resolve;
+        });
+    })
+).then(() => {
+
+    let currentMusic = 0;
+
+    setInterval(() => {
+
+        musicSlides[currentMusic].classList.remove("active");
+
+        currentMusic = (currentMusic + 1) % musicSlides.length;
+
+        musicSlides[currentMusic].classList.add("active");
+
+    }, 6000);
+
+});
+</script>
+
+
+</body>
+</html>

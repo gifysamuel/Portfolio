@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Lab | Gify Samuel</title>
+
+<link rel="stylesheet" href="projects.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    
+
+
+    
+
+<div class="particles"></div>
+
+<header>
+
+<div class="logo">
+
+<img src="Gify.png" alt="Gify Samuel Logo">
+
+<h2>GIFY</h2>
+
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="About.html">About</a>
+
+<a href="Projects.html" class="active">My Lab</a>
+
+<a href="Contact.html">Contact</a>
+
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<h3>WELCOME TO MY LAB</h3>
+
+<h1>
+
+Building
+
+<span>Ideas</span>
+
+Into
+
+Reality
+
+</h1>
+
+<p>
+
+A collection of applications I'm actively designing
+and developing while learning software engineering.
+
+</p>
+
+<div class="stats">
+
+<div>
+
+<h2>4</h2>
+
+<span>Projects</span>
+
+</div>
+
+<div>
+
+<h2>2</h2>
+
+<span>Portfolio</span>
+
+</div>
+
+<div>
+
+<h2>∞</h2>
+
+<span>Learning</span>
+
+</div>
+
+</div>
+
+<a href="#projects" class="explore">
+
+Explore
+
+<i class="fa-solid fa-arrow-down"></i>
+
+</a>
+
+</section>
+
+
+
+<section class="featured">
+
+<h1>
+
+Featured Project
+
+</h1>
+
+<div class="featured-card">
+
+<div class="image">
+
+<img src="images/POS.png" alt="Smart Billing Hub">
+
+</div>
+
+<div class="content">
+
+<span class="status">
+
+🚧 In Development
+
+</span>
+
+<h2>
+
+Smart Billing Hub
+
+</h2>
+
+<p>
+
+A modern business management system featuring billing,
+inventory, analytics, QR payments,
+customer management and reporting.
+
+</p>
+
+<div class="badges">
+
+<span>HTML</span>
+
+<span>CSS</span>
+
+<span>JavaScript</span>
+
+<span>Firebase</span>
+
+</div>
+
+<button
+class="open-modal"
+data-project="billing">
+
+View Details
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="projects" id="projects">
+
+<h1>
+
+Active Projects
+
+</h1>
+<div class="grid">
+
+    <!-- Smart Billing Hub -->
+    <div class="card" data-project="billing">
+
+        <img src="images/POS.png" alt="Smart Billing Hub">
+
+        <div class="card-content">
+
+            <span class="project-status">🚧 In Development</span>
+
+            <h2>Smart Billing Hub</h2>
+
+            <p>
+                Modern POS & business management system for billing,
+                inventory, customer management and analytics.
+            </p>
+
+            <div class="tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Firebase</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Wisdom Media -->
+    <div class="card" data-project="wisdom">
+
+        <img src="images/WM.png" alt="Wisdom Media">
+
+        <div class="card-content">
+
+            <span class="project-status">🚧 In Development</span>
+
+            <h2>Wisdom Media</h2>
+
+            <p>
+                Professional media portfolio showcasing creative
+                photography and cinematic work.
+            </p>
+
+            <div class="tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Emotion Detector -->
+    <div class="card" data-project="emotion">
+
+        <img src="images/ED.png" alt="Emotion Detector">
+
+        <div class="card-content">
+
+            <span class="project-status">🧪 Experimental</span>
+
+            <h2>Emotion Detector</h2>
+
+            <p>
+                AI-powered emotion recognition project using facial
+                expression detection.
+            </p>
+
+            <div class="tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>AI</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Portfolio -->
+    <div class="card" data-project="portfolio">
+
+        <img src="images/portfolio.png" alt="Portfolio">
+
+        <div class="card-content">
+
+            <span class="project-status">✅ Live</span>
+
+            <h2>Portfolio Website</h2>
+
+            <p>
+                My personal portfolio where I showcase projects,
+                skills and my development journey.
+            </p>
+
+            <div class="tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+</section>
+
+
+<div class="modal" id="projectModal">
+
+    <div class="modal-content">
+
+        <button class="close-modal">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div id="modalBody"></div>
+
+    </div>
+
+</div>
+
+
+
+<footer class="footer">
+
+
+    <div class="socials">
+
+        <a href="https://github.com/gifysamuel" target="_blank"><i class="fab fa-github"></i></a>
+
+        <a href="https://www.linkedin.com/in/gifysamuel" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="#"><i class="fab fa-instagram"></i></a>
+
+        <a href="mailto:gifysamuelamarth@gmail.com">
+            <i class="fas fa-envelope"></i>
+        </a>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 Gify Samuel A. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+
+<script src="projects.js"></script>
+
+
+
+
+</body>
+</html> 
