@@ -1,403 +1,765 @@
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
 
-<head>
-    <title>Contact Me</title>
+    <head>
+        <title>Contact | Gify Samuel A</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <style>
+        <style>
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+
+            background:
+            linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url("PP.avif");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding-top:120px;
+            display: block;
+            justify-content: center;
+            align-items: center;
+
+            animation: pageLoad 0.8s ease;
+        }
+
+                .header a.active{
+                color:cyan;
+            }
+
+            .header a.active::after{
+                transform:scaleX(1);
+            }
+
+        /* HEADER */
+        .header {
+            background: rgba(17,16,16,0.5);
+            backdrop-filter: blur(10px);
+
+            position: fixed;
+            top: 20px;
+            left: 15px;
+            right: 15px;
+
+            padding: 20px;
+            border-radius: 100px;
+
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            z-index: 1000;
+
+            transition: 0.4s ease;
+            animation: dropIn 0.8s ease;
+        }
+
+        .header:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,255,255,0.15);
+        }
+
+        .logo {
+            margin-right: auto;
+        }
+
+        .Gify {
+            border-radius: 50%;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .header a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0%;
+            height: 2px;
+            background: cyan;
+            transition: 0.3s ease;
+        }
+
+        .header a:hover {
+            color: cyan;
+        }
+
+        .header a:hover::after {
+            width: 100%;
+        }
+
+        /* CONTACT BOX */
+        .contact_box {
+            color: white;
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+    .contact_box h1{
+        font-size:3.3rem;
+
+        background: linear-gradient(90deg, cyan, white, cyan);
+        background-size:200%;
+
+        background-clip: text;          /* Standard */
+        -webkit-background-clip: text;  /* Chrome/Safari */
+
+        color: transparent;             /* Standard */
+        -webkit-text-fill-color: transparent;
+
+        animation: shine 4s linear infinite;
     }
 
-    body {
-        font-family: 'Poppins', sans-serif;
-        min-height: 100vh;
+        @keyframes shine{
 
-        background:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url("PP.avif");
+    0%{
+    background-position:0%;
+    }
 
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        padding-top:120px;
-        display: block;
+    100%{
+    background-position:200%;
+    }
+
+    }
+
+        .contact_links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+
+    .footer
+    {
+        margin-top: 100px;
+
+        padding: 50px 20px;
+
+        text-align: center;
+
+        background: rgba(17,16,16,0.5);
+
+        backdrop-filter: blur(10px);
+
+        border-top: 1px solid rgba(0,255,255,0.2);
+    }
+
+    .footer h2
+    {
+        color: cyan;
+
+        margin-bottom: 10px;
+
+        text-shadow:
+        0 0 10px cyan,
+        0 0 20px cyan;
+    }
+
+    .footer p
+    {
+        color: white;
+
+        opacity: 0.8;
+    }
+
+
+
+    .socials
+    {
+        margin: 25px 0;
+
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .socials a
+    {
+        width: 50px;
+        height: 50px;
+
+        display: flex;
         justify-content: center;
         align-items: center;
 
-        animation: pageLoad 0.8s ease;
-    }
-
-            .header a.active{
-            color:cyan;
-        }
-
-        .header a.active::after{
-            transform:scaleX(1);
-        }
-
-    /* HEADER */
-    .header {
-        background: rgba(17,16,16,0.5);
-        backdrop-filter: blur(10px);
-
-        position: fixed;
-        top: 20px;
-        left: 15px;
-        right: 15px;
-
-        padding: 20px;
-        border-radius: 100px;
-
-        display: flex;
-        align-items: center;
-        gap: 30px;
-
-        z-index: 1000;
-
-        transition: 0.4s ease;
-        animation: dropIn 0.8s ease;
-    }
-
-    .header:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 30px rgba(0,255,255,0.15);
-    }
-
-    .logo {
-        margin-right: auto;
-    }
-
-    .Gify {
         border-radius: 50%;
-    }
 
-    .header a {
         color: white;
         text-decoration: none;
-        position: relative;
-        transition: 0.3s;
-    }
-
-    .header a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -5px;
-        width: 0%;
-        height: 2px;
-        background: cyan;
-        transition: 0.3s ease;
-    }
-
-    .header a:hover {
-        color: cyan;
-    }
-
-    .header a:hover::after {
-        width: 100%;
-    }
-
-    /* CONTACT BOX */
-    .contact_box {
-        color: white;
-        text-align: center;
-        animation: fadeIn 1s ease;
-    }
-
-    .contact_box h1 {
-        font-size: 3rem;
-        color: cyan;
-        margin-bottom: 30px;
-    }
-
-    .contact_links {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-    }
-
-
-.footer
-{
-    margin-top: 100px;
-
-    padding: 50px 20px;
-
-    text-align: center;
-
-    background: rgba(17,16,16,0.5);
-
-    backdrop-filter: blur(10px);
-
-    border-top: 1px solid rgba(0,255,255,0.2);
-}
-
-.footer h2
-{
-    color: cyan;
-
-    margin-bottom: 10px;
-
-    text-shadow:
-    0 0 10px cyan,
-    0 0 20px cyan;
-}
-
-.footer p
-{
-    color: white;
-
-    opacity: 0.8;
-}
-
-
-
-.socials
-{
-    margin: 25px 0;
-
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
-.socials a
-{
-    width: 50px;
-    height: 50px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    color: white;
-    text-decoration: none;
-
-    background: rgba(255,255,255,0.08);
-
-    border: 1px solid rgba(0,255,255,0.3);
-
-    transition: 0.4s;
-}
-
-.socials a:hover
-{
-    color: cyan;
-
-    transform: translateY(-8px) scale(1.1);
-
-    box-shadow:
-    0 0 15px cyan,
-    0 0 30px cyan;
-}
-
-.socials i
-{
-    font-size: 22px;
-}
-
-.copyright
-{
-    margin-top: 20px;
-    font-size: 14px;
-    opacity: 0.6;
-}
-
-
-    .contact_item {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-
-        padding: 12px 22px;
-        border-radius: 50px;
 
         background: rgba(255,255,255,0.08);
+
         border: 1px solid rgba(0,255,255,0.3);
 
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        cursor: pointer;
+        transition: 0.4s;
     }
 
-    .contact_item:hover {
-        transform: translateY(-6px) scale(1.05);
-        background: rgba(0,255,255,0.12);
-        box-shadow: 0 10px 25px rgba(0,255,255,0.15);
-        border-color: cyan;
-    }
-
-    .contact_item i {
-        font-size: 20px;
+    .socials a:hover
+    {
         color: cyan;
-        transition: 0.4s ease;
+
+        transform: translateY(-8px) scale(1.1);
+
+        box-shadow:
+        0 0 15px cyan,
+        0 0 30px cyan;
     }
 
-    .contact_item:hover i {
-        transform: rotate(10deg) scale(1.2);
+    .socials i
+    {
+        font-size: 22px;
     }
 
-    .contact_item a {
-        color: white;
-        text-decoration: none;
-        font-size: 16px;
-        position: relative;
-    }
-
-    .contact_item a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -3px;
-        width: 0%;
-        height: 1px;
-        background: cyan;
-        transition: 0.3s;
-    }
-
-    .contact_item:hover a::after {
-        width: 100%;
+    .copyright
+    {
+        margin-top: 20px;
+        font-size: 14px;
+        opacity: 0.6;
     }
 
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
+        .contact_item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            padding: 12px 22px;
+            border-radius: 50px;
+
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(0,255,255,0.3);
+
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
+
+        .contact_item{
+    width: 350px;
+    max-width: 90%;
+}
+
+
+
+        .contact_item:hover {
+            transform: translateY(-6px) scale(1.05);
+            background: rgba(0,255,255,0.12);
+            box-shadow: 0 10px 25px rgba(0,255,255,0.15);
+            border-color: cyan;
+        }
+
+        .contact_item i {
+            font-size: 20px;
+            color: cyan;
+            transition: 0.4s ease;
+        }
+
+        .contact_item:hover i {
+            transform: rotate(10deg) scale(1.2);
+        }
+
+        .contact_item a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .contact_item a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0%;
+            height: 1px;
+            background: cyan;
+            transition: 0.3s;
+        }
+
+        .contact_item:hover a::after {
+            width: 100%;
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes dropIn {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pageLoad {
+            from {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float{
+        0%{
+            transform:translateY(0);
+        }
+
+        50%{
+            transform:translateY(-12px);
+        }
+
+        100%{
+            transform:translateY(0);
         }
     }
 
-    @keyframes dropIn {
-        from {
-            opacity: 0;
-            transform: translateY(-40px);
+        .contact_profile{
+        display:flex;
+        justify-content:center;
+        margin-bottom:25px;
+    }
+
+    .contact_profile img{
+            width:220px;
+            height:220px;
+        border-radius:50%;
+        object-fit:cover;
+
+        border:4px solid cyan;
+
+        box-shadow:
+        0 0 25px rgba(0,255,255,.5);
+
+        animation:float 4s ease-in-out infinite;
+    }
+
+    .contact_sub{
+        max-width:650px;
+        margin:0 auto 45px;
+
+        color:#dcdcdc;
+
+        line-height:1.8;
+
+        opacity:.9;
+    }   
+
+    .contact_item:hover{
+
+        transform:translateY(-8px) scale(1.04);
+
+        box-shadow:
+        0 0 20px rgba(0,255,255,.25),
+        0 0 40px rgba(0,255,255,.15);
+
+    }
+
+    .contact_item{
+        opacity:0;
+        animation:fadeIn .8s forwards;
+    }
+
+    .contact_item:nth-child(1){animation-delay:.2s;}
+    .contact_item:nth-child(2){animation-delay:.4s;}
+    .contact_item:nth-child(3){animation-delay:.6s;}
+    .contact_item:nth-child(4){animation-delay:.8s;}
+    .contact_item:nth-child(5){animation-delay:1s;}
+    .contact_item:nth-child(6){animation-delay:1.2s;}
+
+
+    .cta{
+
+    width:90%;
+    max-width:900px;
+
+    margin:90px auto;
+
+    padding:50px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(0,255,255,.2);
+
+    border-radius:25px;
+
+    backdrop-filter:blur(10px);
+
+    }
+
+    .cta h2{
+
+    color:cyan;
+
+    margin-bottom:15px;
+
+    font-size:2.3rem;
+
+    }
+
+    .cta p{
+
+    color:#ddd;
+
+    margin-bottom:30px;
+
+    line-height:1.8;
+
+    }
+
+    .cta_btn{
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+    border-radius:40px;
+
+    background:cyan;
+
+    color:#000;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+    }
+
+    .cta_btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 30px cyan;
+
+    }
+
+
+    body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(circle at 15% 20%,rgba(0,255,255,.12),transparent 30%),
+    radial-gradient(circle at 80% 70%,rgba(0,255,255,.10),transparent 30%);
+
+    animation:moveGlow 10s ease-in-out infinite alternate;
+
+    z-index:-1;
+
+    }
+
+    @keyframes moveGlow{
+
+    from{
+    transform:translate(-40px,-20px);
+    }
+
+    to{
+    transform:translate(40px,20px);
+    }
+
+    }
+
+
+    .status{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 20px;
+    margin-bottom:25px;
+    background:rgba(0,255,255,.08);
+    border:1px solid rgba(0,255,255,.3);
+    border-radius:50px;
+    color:#fff;
+    }
+
+    .dot{
+    width:12px;
+    height:12px;
+    background:#00ff88;
+    border-radius:50%;
+    box-shadow:0 0 15px #00ff88;
+    animation:pulse 1.5s infinite;
+    }
+
+    @keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.4);}
+    100%{transform:scale(1);}
+    }
+
+    .fa-phone{
+    color:#00ff66;
+    }
+
+    .fa-envelope{
+    color:#ff5b5b;
+    }
+
+    .fa-linkedin{
+    color:#0A66C2;
+    }
+
+    .fa-github{
+    color:white;
+    }
+
+    .fa-instagram{
+    color:#ff2f92;
+    }
+
+    .fa-youtube{
+    color:#ff0000;
+    }
+
+    .socials a{
+
+    animation:floatIcon 4s ease-in-out infinite;
+
+    }
+
+    .socials a:nth-child(2){
+
+    animation-delay:.4s;
+
+    }
+
+    .socials a:nth-child(3){
+
+    animation-delay:.8s;
+
+    }
+
+    .socials a:nth-child(4){
+
+    animation-delay:1.2s;
+
+    }
+
+    @keyframes floatIcon{
+
+    0%{
+
+    transform:translateY(0);
+
+    }
+
+    50%{
+
+    transform:translateY(-8px);
+
+    }
+
+    100%{
+
+    transform:translateY(0);
+
+    }
+
+    }
+
+    .contact_item:active{
+
+    transform:scale(.97);
+
+    }
+
+
+    .divider{
+        width:120px;
+        height:2px;
+
+        border:none;
+
+        background:cyan;
+
+        margin:70px auto;
+
+        box-shadow:0 0 20px cyan;
+    }
+
+
+    .contact_profile{
+        animation:zoomIn .8s ease;
+    }
+
+    @keyframes zoomIn{
+        from{
+            opacity:0;
+            transform:scale(.8);
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
+
+        to{
+            opacity:1;
+            transform:scale(1);
         }
     }
 
-    @keyframes pageLoad {
-        from {
-            opacity: 0;
-            transform: scale(0.98);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
+        </style>
+    </head>
 
-    </style>
-</head>
+    <body>
 
-<body>
+    <div class="header">
 
-<div class="header">
-
-    <div class="logo">
-        <img class="Gify" src="Gify.png" width="50">
-    </div>
-
-    <a href="index.html">HOME</a>
-    <a href="About.html">ABOUT ME</a>
-            <a href="Projects.html">MY LAB</a>
-    <a href="Contact.html" class="active">CONTACTS</a>
-
-</div>
-
-<div class="contact_box">
-
-    <h1>Contact Me</h1>
-
-    <div class="contact_links">
-
-        <div class="contact_item">
-            <i class="fa-solid fa-phone"></i>
-            <a href="tel:+91 7825067516">+91 7825067516</a>
+        <div class="logo">
+            <img class="Gify" src="Gify.png" width="50">
         </div>
 
-        <div class="contact_item">
-            <i class="fa-solid fa-envelope"></i>
-            <a href="mailto:gifysamuelamarth@gmail.com">
-                gifysamuelamarth@gmail.com
-            </a>
-        </div>
-
-        <div class="contact_item">
-            <i class="fa-brands fa-linkedin"></i>
-            <a href="https://www.linkedin.com/in/gifysamuel" target="_blank">
-                LinkedIn Profile
-            </a>
-        </div>
-            
-        <div class="contact_item">
-             <i class="fab fa-github"></i>
-            <a href="https://github.com/gifysamuel" target="_blank">
-                GitHub Profile
-            </a>
-        </div> 
-
-        <div class="contact_item">
-         <i class="fab fa-instagram"></i>
-            <a href="" target="_blank">
-               Instagram
-            </a>
-        </div> 
-
-
-
-        <div class="contact_item">
-         <i class="fab fa-youtube"></i>
-            <a href="https://www.youtube.com/@GifySamuelA" target="_blank">
-               YouTube     
-            </a>
-        </div> 
+        <a href="index.html">HOME</a>
+        <a href="About.html">ABOUT ME</a>
+                <a href="Projects.html">MY LAB</a>
+        <a href="Contact.html" class="active">CONTACTS</a>
 
     </div>
 
-</div>
+    <div class="contact_box">
 
-
-<footer class="footer">
-
-
-    <div class="socials">
-
-        <a href="https://github.com/gifysamuel" target="_blank"><i class="fab fa-github"></i></a>
-
-        <a href="https://www.linkedin.com/in/gifysamuel" target="_blank">
-            <i class="fab fa-linkedin"></i>
-        </a>
-
-        <a href="#"><i class="fab fa-instagram"></i></a>
-
-        <a href="mailto:gifysamuelamarth@gmail.com">
-            <i class="fas fa-envelope"></i>
-        </a>
-
+        <div class="contact_profile">
+        <img src="Cont.jpg" alt="Gify Samuel A">
     </div>
 
-    <p class="copyright">
-        © 2026 Gify Samuel A. All Rights Reserved.
+        <h1>Contact Me</h1>
+
+        <div class="status">
+        <span class="dot"></span>
+        Available for Collaboration
+    </div>
+
+    <p class="contact_sub">
+    Have an idea, a project, or just want to connect? I'm always excited to collaborate, learn, and build something meaningful together.
     </p>
 
-</footer>
+        <div class="contact_links">
+
+            <div class="contact_item">
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+91 7825067516">+91 7825067516</a>
+            </div>
+
+            <div class="contact_item">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:gifysamuelamarth@gmail.com">
+                    gifysamuelamarth@gmail.com
+                </a>
+            </div>
+
+            <div class="contact_item">
+                <i class="fa-brands fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/gifysamuel" target="_blank">
+                    LinkedIn Profile
+                </a>
+            </div>
+                
+            <div class="contact_item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/gifysamuel" target="_blank">
+                    GitHub Profile
+                </a>
+            </div> 
+
+            <div class="contact_item">
+            <i class="fab fa-instagram"></i>
+                <a href="" target="_blank">
+                Instagram
+                </a>
+            </div> 
 
 
-</body>
-</html>
+
+            <div class="contact_item">
+            <i class="fab fa-youtube"></i>
+                <a href="https://www.youtube.com/@GifySamuelA" target="_blank">
+                YouTube     
+                </a>
+            </div> 
+
+        </div>
+
+    </div>
+
+
+    <section class="cta">
+
+    <h2>Ready to Build Something Amazing?</h2>
+
+    <p>
+    Whether it's a website, an idea, or a collaboration,
+    I'm always excited to create something meaningful.
+    </p>
+
+    <a href="mailto:gifysamuelamarth@gmail.com" class="cta_btn">
+    Let's Talk
+    </a>
+
+    </section>
+
+    <hr class="divider">
+    <footer class="footer">
+
+
+        <div class="socials">
+
+            <a href="https://github.com/gifysamuel" target="_blank"><i class="fab fa-github"></i></a>
+
+            <a href="https://www.linkedin.com/in/gifysamuel" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+
+            <a href="#"><i class="fab fa-instagram"></i></a>
+
+            <a href="mailto:gifysamuelamarth@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Gify Samuel A. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    </body>
+    </html>
